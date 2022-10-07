@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link, NavLink } from 'react-router-dom'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -6,8 +7,8 @@ const Header = () => {
     <div className='bg-gray-100'>
       <div className='px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8'>
         <div className='relative flex items-center justify-between'>
-          <a
-            href='/'
+          <Link
+            to='/'
             aria-label='proReader'
             title='proReader'
             className='inline-flex items-center'
@@ -30,37 +31,37 @@ const Header = () => {
             <span className='ml-2 text-xl font-bold tracking-wide text-gray-800'>
               proReader
             </span>
-          </a>
+          </Link>
           <ul className='flex items-center hidden space-x-8 lg:flex'>
             <li>
-              <a
-                href='/home'
+              <NavLink
+                to='/home'
                 aria-label='Home'
                 title='Home'
-                className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
+                className={({ isActive }) => isActive ? 'font-medium tracking-wide text-blue-700 transition-colors duration-200 hover:text-deep-purple-accent-400' : 'font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'}
               >
                 Home
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a
-                href='/books'
+              <NavLink
+                to='/books'
                 aria-label='Books'
                 title='Books'
-                className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
+                className={({ isActive }) => isActive ? 'font-medium tracking-wide text-blue-700 transition-colors duration-200 hover:text-deep-purple-accent-400' : 'font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'}
               >
                 Books
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a
-                href='/about'
+              <NavLink
+                to='/about'
                 aria-label='About us'
                 title='About us'
-                className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
+                className={({ isActive }) => isActive ? 'font-medium tracking-wide text-blue-700 transition-colors duration-200 hover:text-deep-purple-accent-400' : 'font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'}
               >
                 About us
-              </a>
+              </NavLink>
             </li>
           </ul>
           <div className='lg:hidden'>
@@ -90,8 +91,8 @@ const Header = () => {
                 <div className='p-5 bg-white border rounded shadow-sm'>
                   <div className='flex items-center justify-between mb-4'>
                     <div>
-                      <a
-                        href='/'
+                      <Link
+                        to='/'
                         aria-label='proReader'
                         title='proReader'
                         className='inline-flex items-center'
@@ -114,7 +115,7 @@ const Header = () => {
                         <span className='ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase'>
                           proReader
                         </span>
-                      </a>
+                      </Link>
                     </div>
                     <div>
                       <button
@@ -135,34 +136,34 @@ const Header = () => {
                   <nav>
                     <ul className='space-y-4'>
                       <li>
-                        <a
-                          href='/'
+                        <Link
+                          to='/'
                           aria-label='Home'
                           title='Home'
                           className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
                         >
                           Home
-                        </a>
+                        </Link>
                       </li>
                       <li>
-                        <a
-                          href='/books'
+                        <Link
+                          to='/books'
                           aria-label='Books'
                           title='Books'
                           className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
                         >
                           Books
-                        </a>
+                        </Link>
                       </li>
                       <li>
-                        <a
-                          href='/about'
+                        <Link
+                          to='/about'
                           aria-label='About Us'
                           title='About Us'
                           className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
                         >
                           About Us
-                        </a>
+                        </Link>
                       </li>
                     </ul>
                   </nav>
